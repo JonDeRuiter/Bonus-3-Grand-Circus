@@ -1,0 +1,7 @@
+C:\Users\GC Student\Source\Repos\Bonus 3 Num Guessing\Bonus 3 Num Guessing\bin\Debug\Bonus 3 Num Guessing.exe.config
+C:\Users\GC Student\Source\Repos\Bonus 3 Num Guessing\Bonus 3 Num Guessing\bin\Debug\Bonus 3 Num Guessing.exe
+C:\Users\GC Student\Source\Repos\Bonus 3 Num Guessing\Bonus 3 Num Guessing\bin\Debug\Bonus 3 Num Guessing.pdb
+C:\Users\GC Student\Source\Repos\Bonus 3 Num Guessing\Bonus 3 Num Guessing\obj\Debug\Bonus 3 Num Guessing.csprojResolveAssemblyReference.cache
+C:\Users\GC Student\Source\Repos\Bonus 3 Num Guessing\Bonus 3 Num Guessing\obj\Debug\Bonus 3 Num Guessing.csproj.CoreCompileInputs.cache
+C:\Users\GC Student\Source\Repos\Bonus 3 Num Guessing\Bonus 3 Num Guessing\obj\Debug\Bonus 3 Num Guessing.exe
+C:\Users\GC Student\Source\Repos\Bonus 3 Num Guessing\Bonus 3 Num Guessing\obj\Debug\Bonus 3 Num Guessing.pdb
