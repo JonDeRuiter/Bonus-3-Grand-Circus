@@ -18,10 +18,23 @@ namespace Bonus_3_Num_Guessing
             {
                 Random genNum = new Random();
                 findMe = genNum.Next(1, 100);
+                track = 0;
                 Console.WriteLine("Welcome to the number guessing game. \nI'm thinking of an integer between 1 and 100. \nWhat do you think it is...?");
                 while(tryAgain)
                 {
-                    tryAgain = Guessing(Console.ReadLine(), findMe);
+                    string x = Console.ReadLine();
+                    while (!(int.TryParse(x, out guess)))
+                    {
+                        Console.WriteLine("Sigh... that wasn't even an integer. Try again");
+                        x = Console.ReadLine();
+                    }
+                    if (guess < 1 || guess > 100)
+                    {
+                        Console.WriteLine("Didn't I say it was between 1 and 100? /n...try again");
+                        x = Console.ReadLine();
+                    }
+                    track++;
+                    tryAgain = Feedback(guess, findMe);
                 }
                 
                 
@@ -72,28 +85,7 @@ namespace Bonus_3_Num_Guessing
                 return false;
             }
             
-        }
-        public static bool Guessing(string x, int findMe)
-        {
-            int g = 0;
-            bool cool = true;
-            while (cool)
-            {
-                while (!(int.TryParse(x, out g)))
-                {
-                    Console.WriteLine("Sigh... that wasn't even an integer. Try again");
-                    x = Console.ReadLine();
-                }
-                if (g < 1 || g > 100)
-                {
-                    Console.WriteLine("Didn't I say it was between 1 and 100? /n...try again");
-                    x = Console.ReadLine();
-                }
-                cool = Feedback(g, findMe);
-            }
-            
-            return false;
-
+        
         }
 
     }
