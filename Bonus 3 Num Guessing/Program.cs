@@ -11,28 +11,20 @@ namespace Bonus_3_Num_Guessing
         static void Main(string[] args)
         {
             int findMe, guess, track;
-            string feedback, again;
-            bool tryAgain = true;
+            string again;
             
+            Console.WriteLine("Welcome to the number guessing game.");
             do
             {
+                bool tryAgain = true;
                 Random genNum = new Random();
                 findMe = genNum.Next(1, 100);
                 track = 0;
-                Console.WriteLine("Welcome to the number guessing game. \nI'm thinking of an integer between 1 and 100. \nWhat do you think it is...?");
+                Console.WriteLine("I'm thinking of an integer between 1 and 100. \nWhat do you think it is...?");
                 while(tryAgain)
                 {
                     string x = Console.ReadLine();
-                    while (!(int.TryParse(x, out guess)))
-                    {
-                        Console.WriteLine("Sigh... that wasn't even an integer. Try again");
-                        x = Console.ReadLine();
-                    }
-                    if (guess < 1 || guess > 100)
-                    {
-                        Console.WriteLine("Didn't I say it was between 1 and 100? /n...try again");
-                        x = Console.ReadLine();
-                    }
+                    guess = TrueInt(x);
                     track++;
                     tryAgain = Feedback(guess, findMe);
                 }
@@ -52,7 +44,7 @@ namespace Bonus_3_Num_Guessing
             int j = x - findMe;
             if (j >= 25 || j <= -25)
             {
-                Console.WriteLine("...why do you make me play with you? That wasn't even close");
+                Console.WriteLine("...why do you make me play with you? That wasn't even close.");
                 Console.WriteLine("Guess again...");
                 return true;
             }
@@ -107,6 +99,26 @@ namespace Bonus_3_Num_Guessing
             {
                 Console.WriteLine("Why do you torture me so... \nYOu needed {0} guesses this time.", x);
             }
+        }
+        public static int TrueInt(string x)
+        {
+            int y, z;
+            while (!(int.TryParse(x, out y)))
+            {
+                Console.WriteLine("Sigh... that wasn't even an integer. Try again");
+                x = Console.ReadLine();
+            }
+            z = Range(y);
+            return z;
+        }
+        public static int Range(int y)
+        {
+            if (y < 1 || y > 100)
+            {
+                Console.WriteLine("Didn't I say it was between 1 and 100? \n...try again");
+                TrueInt(Console.ReadLine());
+            }
+            return y;
         }
     }
 }
