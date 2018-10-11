@@ -36,15 +36,15 @@ namespace Bonus_3_Num_Guessing
                     track++;
                     tryAgain = Feedback(guess, findMe);
                 }
-                
-                
-                //Console.WriteLine("You guessed {0}." );
-                Console.WriteLine("Thats right, I was thinking of {0}.", findMe);
+
+               Console.WriteLine("Thats right, I was thinking of {0}.", findMe);
+                FoundIt(track);
                 Console.WriteLine("Do you want to play again? y/n");
                 again = Console.ReadLine();
                 again = again.ToLower();
             } while (again == "y");
 
+            Console.WriteLine("At least its over... goodbye.");
             Console.ReadLine();
         }
         public static bool Feedback(int x, int findMe)
@@ -84,9 +84,29 @@ namespace Bonus_3_Num_Guessing
             {
                 return false;
             }
-            
-        
         }
-
+        public static void FoundIt(int x)
+        {
+            if (x < 5)
+            {
+                Console.WriteLine("Thank you, for ending it quickly. \nYou only needed {0} guesses.", x);
+            }
+            else if (x <= 10)
+            {
+                Console.WriteLine("That wasn't so bad. \nYou only needed {0} guesses.", x);
+            }
+            else if (x <= 25)
+            {
+                Console.WriteLine("You needed {0} guesses.", x);
+            }
+            else if (x <= 45)
+            {
+                Console.WriteLine("Are you even trying? \nYou needed {0} guesses.", x);
+            }
+            else
+            {
+                Console.WriteLine("Why do you torture me so... \nYOu needed {0} guesses this time.", x);
+            }
+        }
     }
 }
